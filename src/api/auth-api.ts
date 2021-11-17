@@ -6,8 +6,8 @@ export const authApi = createApi({
     reducerPath: 'authApi',
     tagTypes:['Auth'],
     baseQuery: fetchBaseQuery({baseUrl: `http://localhost:5000/api/auth`}),
-    endpoints: builder => ({
-        registration: builder.mutation({
+    endpoints: (build) => ({
+        registration: build.mutation({
             query: (body: AuthParamsType) => ({
                 url: `/registration`,
                 method: 'POST',
@@ -15,7 +15,7 @@ export const authApi = createApi({
             }),
             invalidatesTags:[{type: 'Auth'}]
         }),
-        login: builder.mutation({
+        login: build.mutation({
             query: (body: AuthParamsType) => ({
                 url: `/login`,
                 method: 'POST',
