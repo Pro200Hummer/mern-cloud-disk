@@ -1,17 +1,15 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {Routing} from "../features/Routing";
+import AppWrapper from "../styled-components/app/AppWrapper";
+import AppContent from "../styled-components/app/AppContent";
+import NavBar from "../features/navBar/NavBar";
 
 export const App = () => {
-  return <>
-          <div>
-              <Link to={'/login'}>Login</Link>
-              <Link to={'/registration'}>Registration</Link>
-          </div>
-          <div>
-              <Routing/>
-          </div>
-  </>
-
+    return <AppWrapper>
+        <NavBar/>
+        <AppContent>
+            <Routing/>
+        </AppContent>
+    </AppWrapper>
 };
 
