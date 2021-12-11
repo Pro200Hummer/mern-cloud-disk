@@ -19,10 +19,14 @@ export interface InputProps {
     type: string
     value: string
     placeholder: string
-    handler: (e: ChangeEvent<HTMLInputElement>) => void
+    handlers: {
+        onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void,
+        onBlurHandler: () => void
+    }
 }
 
 export interface ButtonProps {
+    disable: boolean
     handler: () => void
     align?: string
 }

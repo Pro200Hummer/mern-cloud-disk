@@ -22,7 +22,12 @@ const StyledInput = styled.input`
 `;
 
 const Input: FC<InputProps> = props => {
-    return <StyledInput {...props} onChange={props.handler}/>
+    const {onChangeHandler, onBlurHandler} = props.handlers
+    return <StyledInput
+        {...props}
+        onChange={e => onChangeHandler(e)}
+        onBlur={() => onBlurHandler()}
+    />
 };
 
 export default Input;

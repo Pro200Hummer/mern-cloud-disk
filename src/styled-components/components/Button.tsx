@@ -26,7 +26,7 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 const Button: FC<ButtonProps> = props => {
-    return <StyledButton {...props} onClick={props.handler}/>
+    return <StyledButton {...props} onClick={props.handler} disabled={props.disable}/>
 };
 
 export default Button;
